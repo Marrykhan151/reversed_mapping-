@@ -1,12 +1,20 @@
 from rest_framework import serializers
-from .models import Parent, Child
+from .models import Customer, Product, Order
 
-class childSerializer(serializers.ModelSerializer):
+
+class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Child 
+        model = Customer
+        fields = ["first_name", "first_name", "address", "city", "email", "orders"]
+
+
+class ProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
         fields = "__all__"
 
-class ParentSerializer(serializers.ModelSerializer):
+
+class OrderSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Parent
-        fields = ["id","children"]
+        model = Order
+        fields = "__all__"

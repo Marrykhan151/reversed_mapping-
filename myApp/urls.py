@@ -1,11 +1,9 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import ParentViewSet, ChildViewSet
+from django.urls import path
+from .views import *
 
-router = DefaultRouter()
-router.register(r'parent', ParentViewSet)
-router.register(r'children', ChildViewSet)
+# from rest_framework.routers import DefaultRouter
+
 
 urlpatterns = [
-    path('', include(router.urls)),  
+    path("orders/", ordersView),
 ]
